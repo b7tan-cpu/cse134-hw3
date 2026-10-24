@@ -1,4 +1,3 @@
-/* Shared design values for every portfolio page. */
 :root {
   --paper: #faf6ef;
   --surface: #fffdfa;
@@ -27,7 +26,6 @@ body {
   overflow-wrap: anywhere;
 }
 
-/* Child combinator: only the page header/footer, not nested examples. */
 body > header,
 main,
 body > footer {
@@ -72,7 +70,6 @@ nav ul {
   list-style: none;
 }
 
-/* Descendant combinator: links anywhere inside the existing navigation. */
 nav a {
   display: block;
   padding: 0.5rem 0.875rem;
@@ -87,13 +84,11 @@ nav a:hover {
   background: var(--soft-accent);
 }
 
-/* Attribute selector: identify the navigation link for the current page. */
 nav a[aria-current="page"] {
   background: var(--ink);
   color: var(--surface);
 }
 
-/* Hidden only visually until a keyboard user focuses it. */
 .skip-link {
   position: absolute;
   top: 0.75rem;
@@ -212,7 +207,6 @@ figcaption {
   line-height: 1.5;
 }
 
-/* Home: introduction plus the two existing project concepts. */
 .page-index .intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 12rem;
@@ -335,7 +329,6 @@ ol {
   padding-left: 1.5rem;
 }
 
-/* Adjacent sibling: space list items after another list item. */
 li + li {
   margin-top: 0.5rem;
 }
@@ -409,7 +402,7 @@ textarea {
 }
 
 button {
-  /* em keeps this padding proportional to the button's own font size. */
+  
   padding: 0.75em 1em;
   border: 1px solid var(--ink);
   border-radius: 0.25rem;
@@ -494,7 +487,6 @@ body > footer p {
   margin-bottom: 0.75rem;
 }
 
-/* Reading order remains the HTML order when grids collapse. */
 @media (max-width: 48rem) {
   body > header,
   main,

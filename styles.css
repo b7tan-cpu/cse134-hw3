@@ -1,0 +1,560 @@
+/* Shared design values for every portfolio page. */
+:root {
+  --paper: #f7f5f0;
+  --surface: #fffefa;
+  --ink: #203342;
+  --muted: #53636b;
+  --accent: #904226;
+  --soft-accent: #eee5d8;
+  --line: #d8dcd7;
+  --focus: #146185;
+  --radius: 0.75rem;
+  --space: clamp(1.25rem, 3vw, 2rem);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* Child combinator: only the page header/footer, not nested examples. */
+body > header,
+main,
+body > footer {
+  width: min(100% - 3rem, 70rem);
+  margin-inline: auto;
+}
+
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+body > header > p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+body > header > p > a {
+  color: var(--ink);
+  font-weight: 750;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+body > header span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Descendant combinator: links anywhere inside the existing navigation. */
+nav a {
+  display: block;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.3rem;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--soft-accent);
+}
+
+/* Attribute selector: identify the navigation link for the current page. */
+nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+/* Hidden only visually until a keyboard user focuses it. */
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 1;
+  transform: translateY(-200%);
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 2px solid var(--focus);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main {
+  min-height: 65vh;
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+p {
+  margin-block: 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.15em;
+}
+
+:focus,
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+[id] {
+  scroll-margin-top: 1.5rem;
+}
+
+section,
+article {
+  min-width: 0;
+}
+
+main > section,
+main > article {
+  margin-top: 2rem;
+  padding: var(--space);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+section > :last-child,
+article > :last-child {
+  margin-bottom: 0;
+}
+
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* Home: introduction plus the two existing project concepts. */
+.page-index .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 12rem;
+  column-gap: 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--soft-accent);
+  border-color: transparent;
+}
+
+.intro > h2,
+.intro > p {
+  grid-column: 1;
+}
+
+.intro > figure {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  margin: 0;
+  align-self: center;
+}
+
+.intro img {
+  margin-inline: auto;
+}
+
+.intro figcaption {
+  text-align: center;
+}
+
+.page-index .featured {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 3rem;
+  border: 0;
+  background: transparent;
+}
+
+.featured > h2,
+.featured > portfolio-note {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.featured > article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.featured article img {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.featured article > a {
+  margin-top: auto;
+  padding-block: 0.375rem;
+  font-weight: 650;
+}
+
+portfolio-note {
+  display: block;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--soft-accent);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+portfolio-note p:last-child {
+  margin-bottom: 0;
+}
+
+.page-about main,
+.page-contact main,
+.page-projects main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.page-about main > h1,
+.page-contact main > h1,
+.page-projects main > h1,
+.page-projects main > p {
+  grid-column: 1 / -1;
+}
+
+.page-about main > section,
+.page-contact main > section,
+.page-projects main > article {
+  margin: 0;
+}
+
+.page-projects article figure img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.page-projects article h3 {
+  margin-top: 1.75rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+/* Adjacent sibling: space list items after another list item. */
+li + li {
+  margin-top: 0.5rem;
+}
+
+nav li + li {
+  margin-top: 0;
+}
+
+dl {
+  margin: 1.25rem 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 0.875rem;
+  margin-block: 0.75rem 1rem;
+  accent-color: var(--accent);
+}
+
+address {
+  font-style: normal;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+
+legend {
+  padding-inline: 0.5rem;
+  font-weight: 650;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+input,
+textarea,
+button {
+  max-width: 100%;
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--muted);
+  border-radius: 0.25rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  /* em keeps this padding proportional to the button's own font size. */
+  padding: 0.75em 1em;
+  border: 1px solid var(--ink);
+  border-radius: 0.25rem;
+  background: var(--ink);
+  color: var(--surface);
+  cursor: pointer;
+}
+
+button:disabled {
+  border-color: var(--line);
+  background: var(--soft-accent);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+audio,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  width: 100%;
+  min-height: 15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+
+code,
+samp {
+  font-size: 0.875em;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background: var(--soft-accent);
+}
+
+dialog[open] {
+  position: static;
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--soft-accent);
+  color: var(--ink);
+}
+
+.page-sitemap main > ul {
+  padding: var(--space) var(--space) var(--space) 3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 1.75rem 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+body > footer p {
+  margin: 0;
+}
+
+.page-embed main {
+  width: calc(100% - 2rem);
+  padding-block: 1rem;
+  min-height: 0;
+}
+
+.page-embed h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Reading order remains the HTML order when grids collapse. */
+@media (max-width: 48rem) {
+  body > header,
+  main,
+  body > footer {
+    width: calc(100% - 2rem);
+  }
+
+  body > header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 1.25rem;
+  }
+
+  nav a {
+    padding-inline: 0.625rem;
+  }
+
+  .page-index .intro,
+  .page-index .featured,
+  .page-about main,
+  .page-contact main,
+  .page-projects main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intro > figure {
+    grid-column: 1;
+    grid-row: auto;
+    margin-block: 0 1.5rem;
+  }
+
+  .intro figcaption {
+    max-width: 24rem;
+    margin-inline: auto;
+  }
+
+  main {
+    padding-block: 2.5rem;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  body > footer {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  .skip-link,
+  nav {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  main {
+    padding-block: 1rem;
+  }
+
+  article,
+  section {
+    break-inside: avoid;
+  }
+}

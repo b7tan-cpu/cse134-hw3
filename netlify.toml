@@ -1,0 +1,4 @@
+[build]
+  publish = "."
+
+# Static HTML and CSS; no build command or JavaScript dependencies.

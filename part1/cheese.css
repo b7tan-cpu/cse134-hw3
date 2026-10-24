@@ -1,10 +1,13 @@
+/* Binteng Tan — https://github.com/b7tan-cpu/cse134-hw3 */
 :root{
   --accent:#745117;
 }
 
 body{
+  margin: 0;
+  padding-inline: 0.5rem;
   background-color:antiquewhite;
-  color: cornflowerblue;
+  color: #315b9b;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   line-height:  1.5;
@@ -20,7 +23,7 @@ body >footer{
 }
 
 h1{
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 16px;
 }
@@ -39,8 +42,9 @@ section{
 }
 
 h2{
-  font-size: 28px;
+  font-size: 1.75rem;
   margin-bottom: 16px;
+  color: #655e50;
 }
 
 .latin{
@@ -132,6 +136,7 @@ button:hover{
   border-color: #302c24;
 }
 
+:focus,
 :focus-visible{
   outline: 3px solid #185d77;
   outline-offset: 4px;
@@ -139,7 +144,7 @@ button:hover{
 
 @media(max-width: 600px){
   h1{
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   dl{
@@ -178,4 +183,10 @@ a{
 
 a:hover{
   text-decoration-thickness: 2px;
+}
+
+/* Same selector and specificity as the earlier h2 rule: this later
+   color wins by source order in the cascade, without !important. */
+h2 {
+  color: var(--accent);
 }

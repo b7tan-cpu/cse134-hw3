@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Binteng Tan's computer science student portfolio: background, project concepts, and contact information.">
+<title>HTML Experiments | Binteng Tan</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-experiments">
+<header>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<p><a href="index.html">Binteng Tan</a> <span>— Computer Science Portfolio</span></p>
+<nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Me</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="experiments.html" aria-current="page">Experiments</a></li></ul></nav>
+</header>
+<main id="main-content">
+<h1>HTML Experiments</h1><p>This page demonstrates additional HTML elements separately from the portfolio. Examples use native browser rendering and do not implement application interactions.</p>
+<section aria-labelledby="custom"><h2 id="custom">Two custom elements</h2><portfolio-note><p>The <code>portfolio-note</code> element marks contextual notes. Its element-specific CSS establishes a block boundary.</p></portfolio-note><hello-world></hello-world><p>In Homework 2, the empty <code>hello-world</code> element logged <samp>Hello World!</samp> to the console. Its script is omitted from this CSS-only version.</p><noscript><p>These examples remain readable without JavaScript.</p></noscript></section>
+<section aria-labelledby="canvas-heading"><h2 id="canvas-heading">Canvas drawing</h2><canvas id="experiment-canvas" width="240" height="100" aria-label="Canvas placeholder; drawing script omitted in this CSS-only version">A blue rectangle is drawn here when JavaScript and Canvas are available.</canvas><p>The Homework 2 drawing script is omitted from this CSS-only version, so the canvas remains blank.</p></section>
+<section aria-labelledby="vector"><h2 id="vector">Inline SVG</h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" width="240" height="100" role="img" aria-labelledby="svg-title svg-desc"><title id="svg-title">A simple connected graph</title><desc id="svg-desc">Three circular nodes linked by two lines.</desc><path d="M40 50H120L200 50" stroke="black" fill="none"/><circle cx="40" cy="50" r="18" fill="lightblue"/><circle cx="120" cy="50" r="18" fill="lightblue"/><circle cx="200" cy="50" r="18" fill="lightblue"/></svg><p>The drawing uses SVG attributes rather than a CSS stylesheet.</p></section>
+<section aria-labelledby="media"><h2 id="media">Media elements</h2><h3>Audio</h3><audio controls preload="metadata"><source src="assets/tone.wav" type="audio/wav">Your browser does not support audio playback.</audio><p>A locally generated short tone demonstrates an audio source.</p><h3>Video</h3><video controls width="320" height="180" preload="metadata" poster="assets/video-poster.svg"><source src="assets/demo.mp4" type="video/mp4"><track kind="captions" src="assets/demo.vtt" srclang="en" label="English" default>Your browser does not support video playback.</video><p>A short silent concept animation with captions demonstrates video.</p><h3>Embedded document</h3><iframe src="embed.html" title="Embedded explanation of semantic HTML" width="300" height="160" loading="lazy"></iframe></section>
+<section aria-labelledby="template-heading"><h2 id="template-heading">Inert template</h2><p>The following template contains a project article for future reuse. Its contents are not rendered or inserted by a script.</p><template id="project-template"><article><h3>Future project</h3><p>A description will be supplied when this template is used.</p></article></template><pre><code>&lt;template id="project-template"&gt;…&lt;/template&gt;</code></pre></section>
+<section aria-labelledby="dialog-heading"><h2 id="dialog-heading">Static dialog example</h2><div><dialog open aria-labelledby="dialog-title"><h3 id="dialog-title">Portfolio preview note</h3><p>This non-modal dialog is open in the HTML. There is no script to open or close it.</p></dialog></div></section>
+<section aria-labelledby="math-heading"><h2 id="math-heading">MathML: mass-energy equivalence</h2><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></math><p>Here, <var>E</var> is energy, <var>m</var> is mass, and <var>c</var> is the speed of light.</p><p>Being included in a specification does not guarantee consistent browser implementation. MathML was supported in Firefox and Safari earlier, while Chromium-based browsers lacked dependable enabled support for years. Chrome briefly supported it in version 24, removed it because of instability, and enabled it again in version 109. That gap made native MathML difficult to use for a broad audience.</p><p>Source: <a href="https://caniuse.com/mathml">Can I use: MathML browser support</a> (checked <time datetime="2026-10-14">October 14, 2026</time>).</p></section>
+</main>
+<footer><p><small>© 2026 Binteng Tan. CSE 134B HTML portfolio.</small></p><p><a href="sitemap.html">Site map</a> · <a href="mailto:tbinteng@gmail.com">Email Binteng</a></p></footer>
+</body>
+</html>

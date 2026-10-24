@@ -26,6 +26,7 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* Child combinator: target the page header and footer, not nested elements. */
 body > header,
 main,
 body > footer {
@@ -70,6 +71,7 @@ nav ul {
   list-style: none;
 }
 
+/* Descendant combinator: style links inside the existing navigation. */
 nav a {
   display: block;
   padding: 0.5rem 0.875rem;
@@ -84,6 +86,7 @@ nav a:hover {
   background: var(--soft-accent);
 }
 
+/* Attribute selector: highlight the navigation link for the current page. */
 nav a[aria-current="page"] {
   background: var(--ink);
   color: var(--surface);

@@ -1,3 +1,4 @@
+/* Binteng Tan — https://github.com/b7tan-cpu/cse134-hw3 */
 :root{
   --accent:#745117;
 }
@@ -184,6 +185,8 @@ a:hover{
   text-decoration-thickness: 2px;
 }
 
+/* This h2 rule has equal specificity to the earlier h2 rule.
+   Its later source order makes this color win in the cascade. */
 h2 {
   color: var(--accent);
 }

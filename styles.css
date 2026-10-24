@@ -235,7 +235,13 @@ figcaption {
 }
 
 .intro img {
+  width: 10rem;
+  height: 10rem;
   margin-inline: auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 35%;
 }
 
 .intro figcaption {

@@ -1,0 +1,181 @@
+:root{
+  --accent:#745117;
+}
+
+body{
+  background-color:antiquewhite;
+  color: cornflowerblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height:  1.5;
+}
+
+body > header,
+main,
+body >footer{
+  width: 90%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+body > header{
+  padding-bottom: 24px;
+  padding-top: 48px;
+  border-bottom: 3px solid var(--accent) ;
+}
+
+section{
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 3px solid #d9cfb9;
+
+}
+
+h2{
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.latin{
+  font-style: italic;
+
+}
+
+#warning{
+  background-color: bisque;
+  padding-bottom: 24px;
+  border-left: 3px solid #345623;
+}
+
+dl{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px 32px;
+}
+
+dt{
+  font-weight: bold;
+  color: brown;
+}
+
+dd{
+  margin: 0;
+}
+
+blockquote{
+  margin: 32px 0;
+  padding-left: 24px;
+  border-left: 2px solid #d9cfb9;
+}
+blockquote p{
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+blockquote footer{
+  font-size: 14px;
+  color: #655e50;
+}
+
+fieldset{
+  margin: 24px 0;
+  padding: 16px 24px;
+  border: 1px solid #d9cfb9;
+
+}
+
+legend{
+  padding: 0 8px;
+  font-weight: bold;
+
+}
+
+fieldset p{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+input[type="checkbox"]{
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+input[type="text"]{
+  padding: 12px;
+  border: 1px solid #655e50;
+  border-radius: 4px;
+  font: inherit;
+}
+
+button{
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--accent);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #302c24;
+  border-color: #302c24;
+}
+
+:focus-visible{
+  outline: 3px solid #185d77;
+  outline-offset: 4px;
+}
+
+@media(max-width: 600px){
+  h1{
+    font-size: 40px;
+  }
+
+  dl{
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  dd + dt {
+    margin-top: 16px;
+
+  }
+
+  input[type="text"],
+  button{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+body > footer{
+  margin-top: 32px;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  border-top: 1px solid #d9cfb9;
+  font-size: 14px;
+  color: #655e50;
+
+}
+
+a{
+  color: var(--accent);
+  text-underline-offset: 3px;
+
+}
+
+a:hover{
+  text-decoration-thickness: 2px;
+}

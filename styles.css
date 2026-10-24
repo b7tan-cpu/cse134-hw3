@@ -1,13 +1,13 @@
 /* Shared design values for every portfolio page. */
 :root {
-  --paper: #f7f5f0;
-  --surface: #fffefa;
-  --ink: #203342;
-  --muted: #53636b;
-  --accent: #904226;
-  --soft-accent: #eee5d8;
-  --line: #d8dcd7;
-  --focus: #146185;
+  --paper: #faf6ef;
+  --surface: #fffdfa;
+  --ink: #352c26;
+  --muted: #6b5c50;
+  --accent: #87502e;
+  --soft-accent: #f0e4d2;
+  --line: #dccdbb;
+  --focus: #87502e;
   --radius: 0.75rem;
   --space: clamp(1.25rem, 3vw, 2rem);
   color-scheme: light;
